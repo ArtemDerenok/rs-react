@@ -3,13 +3,13 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlMinimizerPlugin = require("html-minimizer-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
-
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].[hash].js"
+    filename: "[name].[contenthash].js"
   },
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
@@ -47,6 +47,7 @@ module.exports = {
       new HtmlMinimizerPlugin({
         test: /\.foo\.html/i,
       }),
+      new TerserPlugin(),
     ],
   },
   module: {
