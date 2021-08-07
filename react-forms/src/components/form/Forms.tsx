@@ -1,22 +1,35 @@
 import { nanoid } from 'nanoid';
 import React, { useState } from 'react';
 import Input from './Input';
+import Select from './Select';
+import RadioInput from './RadioInput';
+import Switch from './Switch';
 
 const initInput = [
   {
     id: nanoid(),
     value: '',
+    name: 'Name',
+    type: 'text',
   },
   {
     id: nanoid(),
     value: '',
+    name: 'Surname',
+    type: 'text',
+  },
+  {
+    id: nanoid(),
+    value: '',
+    name: 'Date of Birthday',
+    type: 'date',
   },
 ];
 
 function Form(): JSX.Element {
   const [values, setValue] = useState(initInput);
 
-  function handleChange(id: string, event: React.ChangeEvent<HTMLInputElement>) {
+  function handleChangeInput(id: string, event: React.ChangeEvent<HTMLInputElement>) {
     setValue(
       values.map((elem: { id: string; value: string }) => {
         const element = elem;
@@ -28,22 +41,25 @@ function Form(): JSX.Element {
     );
   }
 
+  const inputResult = values.map((input) => {
+    return (
+      <Input
+        key={input.id}
+        value={input.value}
+        name={input.name}
+        type={input.type}
+        id={input.id}
+        handleChange={handleChangeInput}
+      />
+    );
+  });
+
   return (
     <form>
-      <Input
-        value={values[0].value}
-        name="Name"
-        type="text"
-        id={initInput[0].id}
-        handleChange={handleChange}
-      />
-      <Input
-        value={values[1].value}
-        name="DOB"
-        type="date"
-        id={initInput[1].id}
-        handleChange={handleChange}
-      />
+      {inputResult}
+      <Select />
+      <RadioInput />
+      <Switch />
     </form>
   );
 }
