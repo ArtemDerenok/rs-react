@@ -1,7 +1,7 @@
 import React from 'react';
-import { IInputProp } from '../../interface/interfaces';
+import { IInputTextProp } from '../../interface/interfaces';
 
-function Input({ value, name, type, id, handleChange }: IInputProp): JSX.Element {
+function Input({ value, name, type, id, handleChange }: IInputTextProp): JSX.Element {
   return (
     <label htmlFor={id}>
       {name}:

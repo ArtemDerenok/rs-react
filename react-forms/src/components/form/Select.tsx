@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { IInputProp } from '../../interface/interfaces';
 
-function Select(): JSX.Element {
-  const [value, setValue] = useState('Belarus');
-
+function Select({ value, handleChange }: IInputProp): JSX.Element {
   return (
-    <label htmlFor="select-contry">
+    <label htmlFor="select-country">
       Your choise: {value}
       <select
         value={value}
         id="select-country"
         onChange={(event) => {
-          setValue(event.target.value);
+          handleChange(event);
         }}
       >
         <option>Belarus</option>

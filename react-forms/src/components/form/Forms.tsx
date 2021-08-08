@@ -4,6 +4,8 @@ import Input from './Input';
 import Select from './Select';
 import RadioInput from './RadioInput';
 import Switch from './Switch';
+import './Form.css';
+import Card from '../cards/Card';
 
 const initInput = [
   {
@@ -26,8 +28,11 @@ const initInput = [
   },
 ];
 
-function Form(): JSX.Element {
+function Form({ addCard }: { addCard(elem: JSX.Element): void }): JSX.Element {
   const [values, setValue] = useState(initInput);
+  const [valueSelect, setValueSelect] = useState('Belarus');
+  const [valueRadioInput, setValueRadioInput] = useState('yes');
+  const [valueSwitch, setValueSwitch] = useState(false);
 
   function handleChangeInput(id: string, event: React.ChangeEvent<HTMLInputElement>) {
     setValue(
@@ -39,6 +44,18 @@ function Form(): JSX.Element {
         return element;
       })
     );
+  }
+
+  function handleChangeSelect(event: React.ChangeEvent<HTMLSelectElement>) {
+    setValueSelect(event.target.value);
+  }
+
+  function handleChangeRadioInput(event: React.ChangeEvent<HTMLInputElement>) {
+    setValueRadioInput(event.target.value);
+  }
+
+  function handleChangeSwitch(event: boolean) {
+    setValueSwitch(event);
   }
 
   const inputResult = values.map((input) => {
@@ -55,11 +72,29 @@ function Form(): JSX.Element {
   });
 
   return (
-    <form>
+    <form className="form-card">
       {inputResult}
-      <Select />
-      <RadioInput />
-      <Switch />
+      <Select value={valueSelect} handleChange={handleChangeSelect} />
+      <RadioInput value={valueRadioInput} handleChange={handleChangeRadioInput} />
+      <Switch value={valueSwitch} handleChange={handleChangeSwitch} />
+      <button
+        type="submit"
+        onClick={(e) => {
+          e.preventDefault();
+          addCard(
+            <Card
+              key={nanoid()}
+              name={values[0].value}
+              surname={values[1].value}
+              date={values[2].value}
+              sex={!valueSwitch ? 'Male' : 'Female'}
+              country={valueSelect}
+            />
+          );
+        }}
+      >
+        Submit
+      </button>
     </form>
   );
 }
