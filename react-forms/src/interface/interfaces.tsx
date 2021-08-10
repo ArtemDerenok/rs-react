@@ -6,11 +6,17 @@ export interface IInputTextProp {
   type: string;
   id: string;
   handleChange(id: string, event: React.ChangeEvent): void;
+  blurHandler(event: React.ChangeEvent): void;
 }
 
-export interface IInputProp {
+export interface ISelectProp {
   value: string;
-  handleChange(event?: React.ChangeEvent, e?: boolean): void;
+  handleChange(event: React.ChangeEvent): void;
+}
+
+export interface ISwitchProp {
+  value: boolean;
+  handleChange(e: boolean): void;
 }
 
 export interface ICardProp {

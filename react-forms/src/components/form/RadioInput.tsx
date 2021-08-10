@@ -1,9 +1,10 @@
 import React from 'react';
-import { IInputProp } from '../../interface/interfaces';
+import { ISelectProp } from '../../interface/interfaces';
 
-function RadioInput({ value, handleChange }: IInputProp): JSX.element {
+function RadioInput({ value, handleChange }: ISelectProp): JSX.Element {
   return (
     <div>
+      Processing of my personal data:
       <label htmlFor="agree">
         <input
           id="agree"

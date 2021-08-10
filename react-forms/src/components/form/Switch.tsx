@@ -1,10 +1,11 @@
 import React from 'react';
 import './Switch.css';
-import { IInputProp } from '../../interface/interfaces';
+import { ISwitchProp } from '../../interface/interfaces';
 
-function Switch({ value, handleChange }: IInputProp): JSX.Element {
+function Switch({ value, handleChange }: ISwitchProp): JSX.Element {
   return (
     <div className="content">
+      Your gender:
       <label className="switch" htmlFor="switch-btn">
         <input
           type="checkbox"
@@ -14,8 +15,7 @@ function Switch({ value, handleChange }: IInputProp): JSX.Element {
         />
         <span className="slider round" />
       </label>
-      <span>Male/Female</span>
-      <p>{!value ? 'Male' : 'Female'}</p>
+      <span>{!value ? 'Male' : 'Female'}</span>
     </div>
   );
 }

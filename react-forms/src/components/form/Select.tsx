@@ -1,10 +1,10 @@
 import React from 'react';
-import { IInputProp } from '../../interface/interfaces';
+import { ISelectProp } from '../../interface/interfaces';
 
-function Select({ value, handleChange }: IInputProp): JSX.Element {
+function Select({ value, handleChange }: ISelectProp): JSX.Element {
   return (
     <label htmlFor="select-country">
-      Your choise: {value}
+      Your country:
       <select
         value={value}
         id="select-country"
