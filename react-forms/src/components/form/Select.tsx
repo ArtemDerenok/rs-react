@@ -6,15 +6,18 @@ function Select({ value, handleChange }: ISelectProp): JSX.Element {
     <label htmlFor="select-country">
       Your country:
       <select
-        value={value}
+        defaultValue={value}
         id="select-country"
         onChange={(event) => {
           handleChange(event);
         }}
       >
-        <option>Belarus</option>
-        <option>Russia</option>
-        <option>Ukraine</option>
+        <option value="1" disabled>
+          Please select an option...
+        </option>
+        <option value="Belarus">Belarus</option>
+        <option value="Russia">Russia</option>
+        <option value="Ukraine">Ukraine</option>
       </select>
     </label>
   );

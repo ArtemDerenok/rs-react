@@ -1,10 +1,24 @@
 .form-card {
   width: 300px;
   height: auto;
-  border: 1px solid black;
+  border: 4px solid indigo;
+  border-radius: 5%;
   display: flex;
   flex-direction: column;
   gap: 15px;
+  padding: 5px;
+}
+
+input {
+  background-color: lightgreen;
+}
+
+select {
+  background-color: lightgreen;
+}
+
+option {
+  background-color: lightgreen;
 }
 
 label {

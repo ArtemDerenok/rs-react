@@ -1,9 +1,10 @@
 import React from 'react';
 import { ICardProp } from '../../interface/interfaces';
+import './Card.css';
 
 function Card({ name, surname, date, sex, country }: ICardProp): JSX.Element {
   return (
-    <div>
+    <div className="card">
       <p>Name: {name}</p>
       <p>Surname: {surname}</p>
       <p>Date of Birthday: {date}</p>

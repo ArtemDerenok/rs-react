@@ -37,7 +37,7 @@ function Form({ addCard }: { addCard(elem: JSX.Element): void }): JSX.Element {
   const [surnameError, setSurnameError] = useState('The field cannot be empty');
   const [dateError, setDateError] = useState('Choose your date of birth');
   const [handleDateError, setHandleDateError] = useState('Give your assent');
-  const [valueSelect, setValueSelect] = useState('');
+  const [valueSelect, setValueSelect] = useState('1');
   const [valueSelectError, setValueSelectError] = useState('Сhoose your country');
   const [valueRadioInput, setValueRadioInput] = useState('no');
   const [valueSwitch, setValueSwitch] = useState(false);

@@ -1,5 +1,4 @@
 .content {
-  background-color: #FFFFFF;
   display: flex;
 }
 
@@ -8,6 +7,7 @@
   display: inline-block;
   width: 46px;
   height: 23px;
+  margin-right: 5px;
 }
 
 .switch input {
@@ -25,15 +25,16 @@
   bottom: 0;
   background-color: #6E6E6E;
   transition: .4s;
+  margin-left: 5px;
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 16px;
-  width: 21px;
+  height: 14px;
+  width: 14px;
   left: 4px;
-  bottom: 4px;
+  bottom: 5px;
   background-color: #FFFFFF;
   transition: .4s;
 }
