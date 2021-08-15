@@ -1,9 +1,16 @@
 import React from 'react';
+import { ISelectProp } from '../intefaces/interfaces';
 
-function SelectSort(): JSX.Element {
+function SelectSort({ setSortType }: ISelectProp): JSX.Element {
   return (
     <label htmlFor="sort-type">
-      <select id="sort-type" defaultValue="1">
+      <select
+        id="sort-type"
+        defaultValue="1"
+        onChange={(event) => {
+          setSortType(event);
+        }}
+      >
         <option value="1" disabled>
           Please select a sort...
         </option>

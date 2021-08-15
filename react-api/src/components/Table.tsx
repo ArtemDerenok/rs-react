@@ -1,9 +1,10 @@
 import React from 'react';
+import './Table.css';
 
 function Table({ arrArticles }: { arrArticles: JSX.Element[] }): JSX.Element {
   return (
     <table>
-      <thead>
+      <thead className={`${!arrArticles.length ? 'hidden' : ''}`}>
         <tr>
           <th>Author</th>
           <th>Date</th>

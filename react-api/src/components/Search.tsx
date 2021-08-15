@@ -1,11 +1,11 @@
 import { AxiosResponse } from 'axios';
 import React, { ChangeEvent, FormEvent, useState } from 'react';
-import { IAddArticlesProp, IGetArticles } from '../intefaces/interfaces';
+import { IGetArticles, ISearchProp } from '../intefaces/interfaces';
 import axios from '../services/api';
 
 const API_KEY = '7b1fd1e758da411aad435c3ccd37acd5';
 
-function Search({ addArticles }: IAddArticlesProp): JSX.Element {
+function Search({ addArticles, sortType }: ISearchProp): JSX.Element {
   const [valueSearch, setValueSearch] = useState('');
   const [valueLoad, setValueLoad] = useState(false);
 
@@ -18,9 +18,12 @@ function Search({ addArticles }: IAddArticlesProp): JSX.Element {
     setValueLoad(true);
     try {
       const response: AxiosResponse<IGetArticles> = await axios.get(
-        `v2/everything?q=${valueSearch}&apiKey=${API_KEY}`
+        `v2/everything?q=${valueSearch}&pageSize=100&sortBy=${sortType}&apiKey=${API_KEY}`
       );
       addArticles(response.data.articles);
+      if (!response.data.articles.length) {
+        throw new Error();
+      }
     } catch (error) {
       console.error(error);
     } finally {
