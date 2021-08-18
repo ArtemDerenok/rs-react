@@ -30,3 +30,15 @@ export interface IPaginationProp {
   paginate(pageNumber: number): void;
   currentPage: number;
 }
+
+export interface IArticleProp {
+  article: IArticle | undefined;
+}
+
+export interface IAddArticleProp {
+  addArticle(elem: IArticle): void;
+}
+
+export interface ITableProp {
+  arrArticles: JSX.Element[];
+}

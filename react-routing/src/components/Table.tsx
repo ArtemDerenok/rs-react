@@ -1,7 +1,8 @@
 import React from 'react';
+import { ITableProp } from '../intefaces/interfaces';
 import './Table.css';
 
-function Table({ arrArticles }: { arrArticles: JSX.Element[] }): JSX.Element {
+function Table({ arrArticles }: ITableProp): JSX.Element {
   return (
     <table>
       <thead className={`${!arrArticles.length ? 'hidden' : ''}`}>

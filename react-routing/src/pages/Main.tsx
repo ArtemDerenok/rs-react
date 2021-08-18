@@ -1,14 +1,16 @@
 import { nanoid } from 'nanoid';
 import React, { ChangeEvent, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Pagination from '../components/Pagination';
 import Search from '../components/Search';
 import SelectSort from '../components/SelectSort';
 import Table from '../components/Table';
-import { IArticle } from '../intefaces/interfaces';
+import { IAddArticleProp, IArticle } from '../intefaces/interfaces';
 import './Main.css';
 
-function Main(): JSX.Element {
-  const [arrArticles, setArrAticles] = useState<IArticle[]>([]);
+function Main({ addArticle }: IAddArticleProp): JSX.Element {
+  const array: string | null = localStorage.getItem('table');
+  const [arrArticles, setArrAticles] = useState<IArticle[]>(array ? JSON.parse(array) : []);
   const [valueSort, setValueSort] = useState('publishedAt');
   const [currentPage, setCurrentPage] = useState(1);
   const [articlesPerPage, setArticlesPerPage] = useState(10);
@@ -44,6 +46,13 @@ function Main(): JSX.Element {
           <td>{currentArticle[i].description}</td>
           <td>
             <a href={currentArticle[i].url}>{currentArticle[i].title}</a>
+          </td>
+          <td>
+            <Link to={`/article/${currentArticle[i].source.id}`}>
+              <button onClick={() => addArticle(currentArticle[i])} type="button">
+                В отдельном окне
+              </button>
+            </Link>
           </td>
         </tr>
       );
