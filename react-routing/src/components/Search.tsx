@@ -28,7 +28,7 @@ function Search({ addArticles, sortType }: ISearchProp): JSX.Element {
         return e;
       });
       addArticles(result);
-      localStorage.setItem('table', JSON.stringify(result));
+      sessionStorage.setItem('table', JSON.stringify(result));
       if (!response.data.articles.length) {
         throw new Error();
       }

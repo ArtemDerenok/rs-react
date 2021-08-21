@@ -35,7 +35,7 @@ export interface IArticleProp {
   article: IArticle | undefined;
 }
 
-export interface IAddArticleProp {
+export interface IMainPageProp {
   addArticle(elem: IArticle): void;
 }
 

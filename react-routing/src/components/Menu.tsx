@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Menu.css';
 
 function Menu(): JSX.Element {
@@ -7,10 +7,14 @@ function Menu(): JSX.Element {
     <nav className="menu">
       <ul className="menu-list">
         <li>
-          <Link to="/">Home</Link>
+          <NavLink exact to="/" activeClassName="active">
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <NavLink to="/about" activeClassName="active">
+            About
+          </NavLink>
         </li>
       </ul>
     </nav>

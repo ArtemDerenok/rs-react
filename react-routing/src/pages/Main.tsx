@@ -5,15 +5,17 @@ import Pagination from '../components/Pagination';
 import Search from '../components/Search';
 import SelectSort from '../components/SelectSort';
 import Table from '../components/Table';
-import { IAddArticleProp, IArticle } from '../intefaces/interfaces';
+import { IArticle, IMainPageProp } from '../intefaces/interfaces';
 import './Main.css';
 
-function Main({ addArticle }: IAddArticleProp): JSX.Element {
-  const array: string | null = localStorage.getItem('table');
+function Main({ addArticle }: IMainPageProp): JSX.Element {
+  const array: string | null = sessionStorage.getItem('table');
   const [arrArticles, setArrAticles] = useState<IArticle[]>(array ? JSON.parse(array) : []);
   const [valueSort, setValueSort] = useState('publishedAt');
   const [currentPage, setCurrentPage] = useState(1);
   const [articlesPerPage, setArticlesPerPage] = useState(10);
+
+  sessionStorage.setItem('errorFlag', 'false');
 
   function handleValueSort(event: ChangeEvent<HTMLSelectElement>) {
     setValueSort(event.target.value);
@@ -77,7 +79,7 @@ function Main({ addArticle }: IAddArticleProp): JSX.Element {
           type="number"
           id="number-articles"
           onBlur={(event) => handleArticlesPerPage(Number(event.target.value))}
-          className="input-name__field"
+          className="input-num__field"
         />
       </label>
       <Table arrArticles={result} />

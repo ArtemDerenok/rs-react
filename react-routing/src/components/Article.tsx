@@ -1,21 +1,15 @@
 import React from 'react';
 import { IArticleProp } from '../intefaces/interfaces';
+import '../style.css';
 
 function Article({ article }: IArticleProp): JSX.Element {
   return (
     <div>
-      <table>
-        <tbody>
-          <tr>
-            <td>{article?.author}</td>
-            <td>{article?.publishedAt}</td>
-            <td>{article?.description}</td>
-            <td>
-              <a href={article?.url}>{article?.title}</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <h3>{article?.title}</h3>
+      <p>{article?.content}</p>
+      <p>{article?.publishedAt}</p>
+      <p>{article?.author}</p>
+      <a href={article?.url}>{article?.title}</a>
     </div>
   );
 }
