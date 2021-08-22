@@ -1,29 +1,19 @@
 import { nanoid } from 'nanoid';
-import React, { ChangeEvent, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Pagination from '../components/Pagination';
 import Search from '../components/Search';
 import SelectSort from '../components/SelectSort';
 import Table from '../components/Table';
-import { IArticle, IMainPageProp } from '../intefaces/interfaces';
+import { IMainPageProp } from '../intefaces/interfaces';
 import './Main.css';
+import { useTypeSelector } from '../hooks/useTypeSelector';
 
 function Main({ addArticle }: IMainPageProp): JSX.Element {
-  const array: string | null = sessionStorage.getItem('table');
-  const [arrArticles, setArrAticles] = useState<IArticle[]>(array ? JSON.parse(array) : []);
-  const [valueSort, setValueSort] = useState('publishedAt');
   const [currentPage, setCurrentPage] = useState(1);
   const [articlesPerPage, setArticlesPerPage] = useState(10);
 
-  sessionStorage.setItem('errorFlag', 'false');
-
-  function handleValueSort(event: ChangeEvent<HTMLSelectElement>) {
-    setValueSort(event.target.value);
-  }
-
-  function addArticles(arr: IArticle[]) {
-    setArrAticles(arr);
-  }
+  const { articles } = useTypeSelector((state) => state.articles);
 
   function handleArticlesPerPage(number: number) {
     if (number <= 0) {
@@ -35,7 +25,7 @@ function Main({ addArticle }: IMainPageProp): JSX.Element {
 
   const lastArticleIndex = currentPage * articlesPerPage;
   const firsArticleIndex = lastArticleIndex - articlesPerPage;
-  const currentArticle = arrArticles.slice(firsArticleIndex, lastArticleIndex);
+  const currentArticle = articles.slice(firsArticleIndex, lastArticleIndex);
 
   const result: JSX.Element[] = [];
 
@@ -69,9 +59,9 @@ function Main({ addArticle }: IMainPageProp): JSX.Element {
 
   return (
     <div className="main-page">
-      <Search addArticles={addArticles} sortType={valueSort} />
+      <Search />
       <h4>Sort by:</h4>
-      <SelectSort setSortType={handleValueSort} />
+      <SelectSort />
       <br />
       <label htmlFor="number-articles" className="input-num">
         <span className="input-num__heading">Number of articles per page:</span> <br />
@@ -85,7 +75,7 @@ function Main({ addArticle }: IMainPageProp): JSX.Element {
       <Table arrArticles={result} />
       <Pagination
         articlesPerPage={articlesPerPage}
-        totalArticles={arrArticles.length}
+        totalArticles={articles.length}
         paginate={paginate}
         currentPage={currentPage}
       />

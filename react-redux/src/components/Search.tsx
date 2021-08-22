@@ -1,42 +1,22 @@
-import { AxiosResponse } from 'axios';
-import { nanoid } from 'nanoid';
-import React, { ChangeEvent, FormEvent, useState } from 'react';
-import { IArticle, IGetArticles, ISearchProp } from '../intefaces/interfaces';
-import axios from '../services/api';
+import React, { ChangeEvent, FormEvent } from 'react';
+import { useDispatch } from 'react-redux';
+import { useTypeSelector } from '../hooks/useTypeSelector';
+import { fetchArticles } from '../store/action-creator/article';
+import { choiseSearchValue } from '../store/action-creator/search-value';
 
-const API_KEY = '7b1fd1e758da411aad435c3ccd37acd5';
+function Search(): JSX.Element {
+  const dispatch = useDispatch();
+  const { loading } = useTypeSelector((state) => state.articles);
+  const searchValue = useTypeSelector((state) => state.searchValues.searchValue);
+  const sortTypeValue = useTypeSelector((state) => state.sortTypeValue.sortType);
 
-function Search({ addArticles, sortType }: ISearchProp): JSX.Element {
-  const [valueSearch, setValueSearch] = useState('');
-  const [valueLoad, setValueLoad] = useState(false);
-
-  function handleChange(event: ChangeEvent<HTMLInputElement>) {
-    setValueSearch(event.target.value);
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    dispatch(fetchArticles(searchValue, sortTypeValue));
   }
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setValueLoad(true);
-    try {
-      const response: AxiosResponse<IGetArticles> = await axios.get(
-        `v2/everything?q=${valueSearch}&pageSize=100&sortBy=${sortType}&apiKey=${API_KEY}`
-      );
-
-      const result: IArticle[] = response.data.articles.map((elem) => {
-        const e = elem;
-        e.source.id = nanoid();
-        return e;
-      });
-      addArticles(result);
-      sessionStorage.setItem('table', JSON.stringify(result));
-      if (!response.data.articles.length) {
-        throw new Error();
-      }
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setValueLoad(false);
-    }
+  function handleChange(event: ChangeEvent<HTMLInputElement>) {
+    dispatch(choiseSearchValue(event.target.value));
   }
 
   return (
@@ -44,13 +24,13 @@ function Search({ addArticles, sortType }: ISearchProp): JSX.Element {
       <label htmlFor="search-bar">
         <input
           type="text"
-          value={valueSearch}
+          value={searchValue}
           id="search-bar"
           onChange={(event) => handleChange(event)}
         />
       </label>
-      <button type="submit" disabled={valueLoad}>
-        {valueLoad ? 'Loading...' : 'Search'}
+      <button type="submit" disabled={loading}>
+        {loading ? 'Loading...' : 'Search'}
       </button>
     </form>
   );

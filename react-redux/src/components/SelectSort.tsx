@@ -1,14 +1,21 @@
 import React from 'react';
-import { ISelectProp } from '../intefaces/interfaces';
+import { useDispatch } from 'react-redux';
+import { choiseSortType } from '../store/action-creator/sort-type';
 
-function SelectSort({ setSortType }: ISelectProp): JSX.Element {
+function SelectSort(): JSX.Element {
+  const dispatch = useDispatch();
+
+  function hundleValue(event: React.ChangeEvent<HTMLSelectElement>) {
+    dispatch(choiseSortType(event.target.value));
+  }
+
   return (
     <label htmlFor="sort-type">
       <select
         id="sort-type"
         defaultValue="1"
         onChange={(event) => {
-          setSortType(event);
+          hundleValue(event);
         }}
       >
         <option value="1" disabled>
