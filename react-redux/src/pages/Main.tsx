@@ -42,7 +42,7 @@ function Main({ addArticle }: IMainPageProp): JSX.Element {
           <td>
             <Link to={`/article/${currentArticle[i].source.id}`}>
               <button onClick={() => addArticle(currentArticle[i])} type="button">
-                В отдельном окне
+                Details
               </button>
             </Link>
           </td>
