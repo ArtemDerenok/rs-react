@@ -12,6 +12,7 @@ function SelectSort(): JSX.Element {
   return (
     <label htmlFor="sort-type">
       <select
+        data-testid="select-element"
         id="sort-type"
         defaultValue="1"
         onChange={(event) => {
@@ -21,9 +22,15 @@ function SelectSort(): JSX.Element {
         <option value="1" disabled>
           Please select a sort...
         </option>
-        <option value="relevancy">Relevancy</option>
-        <option value="popularity">Popularity</option>
-        <option value="publishedAt">Published at</option>
+        <option data-testid="select-option" value="relevancy">
+          Relevancy
+        </option>
+        <option data-testid="select-option" value="popularity">
+          Popularity
+        </option>
+        <option data-testid="select-option" value="publishedAt">
+          Published at
+        </option>
       </select>
     </label>
   );

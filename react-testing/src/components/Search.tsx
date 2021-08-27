@@ -20,16 +20,17 @@ function Search(): JSX.Element {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} data-testid="form-element">
       <label htmlFor="search-bar">
         <input
+          data-testid="search-input-element"
           type="text"
           value={searchValue}
           id="search-bar"
           onChange={(event) => handleChange(event)}
         />
       </label>
-      <button type="submit" disabled={loading}>
+      <button type="submit" disabled={loading} data-testid="search-button">
         {loading ? 'Loading...' : 'Search'}
       </button>
     </form>

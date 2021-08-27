@@ -5,7 +5,7 @@ import './Table.css';
 function Table({ arrArticles }: ITableProp): JSX.Element {
   return (
     <table>
-      <thead className={`${!arrArticles.length ? 'hidden' : ''}`}>
+      <thead data-testid="thead-element" className={`${!arrArticles.length ? 'hidden' : ''}`}>
         <tr>
           <th>Author</th>
           <th>Date</th>

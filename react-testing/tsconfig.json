@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es5",
     "module": "commonjs",
     "jsx": "react",
     "moduleResolution": "node",
@@ -11,5 +11,9 @@
     "isolatedModules": true,
     "esModuleInterop": true
   },
-  "include": ["src"]
+  "include": ["src",
+    "babel.config.js",
+    "jest-setup.ts"
+  ],
+  
 }

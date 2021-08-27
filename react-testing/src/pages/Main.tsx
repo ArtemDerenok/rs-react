@@ -58,7 +58,7 @@ function Main({ addArticle }: IMainPageProp): JSX.Element {
   }
 
   return (
-    <div className="main-page">
+    <div data-testid="main-element" className="main-page">
       <Search />
       <h4>Sort by:</h4>
       <SelectSort />
@@ -66,6 +66,7 @@ function Main({ addArticle }: IMainPageProp): JSX.Element {
       <label htmlFor="number-articles" className="input-num">
         <span className="input-num__heading">Number of articles per page:</span> <br />
         <input
+          data-testid="main-input-element"
           type="number"
           id="number-articles"
           onBlur={(event) => handleArticlesPerPage(Number(event.target.value))}

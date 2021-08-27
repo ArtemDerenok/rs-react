@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1630096439120" clover="3.2.0">
+  <project timestamp="1630096439120" name="All files">
+    <metrics statements="95" coveredstatements="80" conditionals="23" coveredconditionals="18" methods="36" coveredmethods="31" elements="154" coveredelements="129" complexity="0" loc="95" ncloc="95" packages="8" files="19" classes="19"/>
+    <package name="components">
+      <metrics statements="23" coveredstatements="23" conditionals="6" coveredconditionals="5" methods="16" coveredmethods="16"/>
+      <file name="Article.tsx" path="D:\rs-react\react-testing\src\components\Article.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="Menu.tsx" path="D:\rs-react\react-testing\src\components\Menu.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="Pagination.tsx" path="D:\rs-react\react-testing\src\components\Pagination.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="34" count="5" type="stmt"/>
+      </file>
+      <file name="Search.tsx" path="D:\rs-react\react-testing\src\components\Search.tsx">
+        <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="7" coveredmethods="7"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="12" type="stmt"/>
+        <line num="10" count="12" type="stmt"/>
+        <line num="11" count="12" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="22" count="6" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+      </file>
+      <file name="SelectSort.tsx" path="D:\rs-react\react-testing\src\components\SelectSort.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+      </file>
+      <file name="Table.tsx" path="D:\rs-react\react-testing\src\components\Table.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="6" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="hooks">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="useTypeSelector.ts" path="D:\rs-react\react-testing\src\hooks\useTypeSelector.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="intefaces">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="interfaces.ts" path="D:\rs-react\react-testing\src\intefaces\interfaces.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="35" count="5" type="stmt"/>
+        <line num="36" count="5" type="stmt"/>
+        <line num="37" count="5" type="stmt"/>
+        <line num="38" count="5" type="stmt"/>
+        <line num="39" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="pages">
+      <metrics statements="21" coveredstatements="15" conditionals="4" coveredconditionals="1" methods="8" coveredmethods="6"/>
+      <file name="About.tsx" path="D:\rs-react\react-testing\src\pages\About.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+      <file name="Main.tsx" path="D:\rs-react\react-testing\src\pages\Main.tsx">
+        <metrics statements="18" coveredstatements="12" conditionals="4" coveredconditionals="1" methods="6" coveredmethods="4"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="16" count="8" type="stmt"/>
+        <line num="19" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="26" count="4" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
+        <line num="28" count="4" type="stmt"/>
+        <line num="30" count="4" type="stmt"/>
+        <line num="32" count="4" type="stmt"/>
+        <line num="33" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="60" count="4" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
+      </file>
+      <file name="PageNotFound.tsx" path="D:\rs-react\react-testing\src\pages\PageNotFound.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="services">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="api.ts" path="D:\rs-react\react-testing\src\services\api.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="store">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="D:\rs-react\react-testing\src\store\index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="store.action-creator">
+      <metrics statements="20" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="6"/>
+      <file name="article.ts" path="D:\rs-react\react-testing\src\store\action-creator\article.ts">
+        <metrics statements="14" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+      </file>
+      <file name="search-value.ts" path="D:\rs-react\react-testing\src\store\action-creator\search-value.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="sort-type.ts" path="D:\rs-react\react-testing\src\store\action-creator\sort-type.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="store.reducers">
+      <metrics statements="22" coveredstatements="20" conditionals="13" coveredconditionals="12" methods="4" coveredmethods="3"/>
+      <file name="articlesReducer.ts" path="D:\rs-react\react-testing\src\store\reducers\articlesReducer.ts">
+        <metrics statements="12" coveredstatements="10" conditionals="7" coveredconditionals="6" methods="2" coveredmethods="1"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="28" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="29" count="16" type="cond" truecount="4" falsecount="0"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="37" count="11" type="stmt"/>
+      </file>
+      <file name="searchReducer.ts" path="D:\rs-react\react-testing\src\store\reducers\searchReducer.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="7" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="12" count="12" type="stmt"/>
+      </file>
+      <file name="sortReduce.ts" path="D:\rs-react\react-testing\src\store\reducers\sortReduce.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="7" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="13" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="12" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
