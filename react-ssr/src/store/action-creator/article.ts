@@ -26,7 +26,6 @@ export const fetchArticles = (searchValues: string, sortType: string) => {
         e.source.id = nanoid();
         return e;
       });
-      sessionStorage.setItem('table', JSON.stringify(result));
       setTimeout(() => {
         dispatch({ type: FETCH_ARTICLES_SUCCESS, payload: result });
       }, 500);

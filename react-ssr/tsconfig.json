@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es5",
     "module": "commonjs",
     "jsx": "react",
     "moduleResolution": "node",
     "strict": true,
-    "noEmit": true,
+    "noEmit": false,
     "allowJs": true,
     "skipLibCheck": true,
     "isolatedModules": true,

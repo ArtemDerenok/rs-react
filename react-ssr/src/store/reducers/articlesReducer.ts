@@ -7,17 +7,7 @@ import {
   IArticleState,
 } from '../../intefaces/interfaces';
 
-const array: string | null = sessionStorage.getItem('table');
-let result: IArticle[];
-
-function parse(str: string) {
-  return JSON.parse(str) as IArticle[];
-}
-if (array) {
-  result = parse(array);
-} else {
-  result = [];
-}
+const result: IArticle[] = [];
 
 const defaultValue: IArticleState = {
   articles: result,

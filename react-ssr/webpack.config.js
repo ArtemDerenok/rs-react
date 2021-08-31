@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlMinimizerPlugin = require("html-minimizer-webpack-plugin");
@@ -6,6 +7,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const nodeExternals = require('webpack-node-externals');
 
 
 const isDev = process.env.NODE_ENV === 'development'
@@ -30,9 +32,6 @@ function setDevTool() {
 function optimization() {
   if(isProd) {
     return {
-      splitChunks: {
-        chunks: 'all'
-      },
       minimize: true,
       minimizer: [
         new HtmlMinimizerPlugin({
@@ -45,13 +44,13 @@ function optimization() {
   }
 }
 
-module.exports = {
+let browserConfig = {
   mode: setDMode(),
   devtool: setDevTool(),
   entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].[contenthash].js",
+    filename: "client.js",
   },
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
@@ -64,9 +63,9 @@ module.exports = {
     historyApiFallback: true,
   },
   plugins: [
-    new MiniCssExtractPlugin(),
-    new HtmlWebpackPlugin({template: "./src/index.html"}),
-    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'main.css',
+    }),
     new CopyPlugin({
       patterns: [
         {
@@ -103,16 +102,39 @@ module.exports = {
         use: ['file-loader']
       },
       {
-        test: /\.tsx?$/,
+        test: /\.(js|jsx|tsx|ts)$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/env", "@babel/react", "@babel/typescript"],
-            plugins: ["@babel/plugin-transform-async-to-generator", "@babel/plugin-transform-runtime"]
-          }
-        }
+        loader: 'babel-loader'
       }
     ]
   }
 }
+
+
+let serverConfig = {
+  entry: './src/server/index.tsx',
+  target: 'node',
+  externals: [nodeExternals()],
+  resolve: {
+    extensions: ['*', '.js', '.jsx', '.json', '.ts', '.tsx'],
+  },
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: 'server.js',
+    publicPath: '/'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx|tsx|ts)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        use: 'null-loader'
+      }
+    ]
+  }
+}
+module.exports = [browserConfig, serverConfig];

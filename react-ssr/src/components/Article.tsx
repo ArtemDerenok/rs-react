@@ -1,6 +1,5 @@
 import React from 'react';
 import { IArticleProp } from '../intefaces/interfaces';
-import '../style.css';
 
 function Article({ article }: IArticleProp): JSX.Element {
   return (
