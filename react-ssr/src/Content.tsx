@@ -3,7 +3,7 @@ import { Route, Switch, useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Article from './components/Article';
 import Menu from './components/Menu';
-import { IArticle } from './intefaces/interfaces';
+import { IArticle } from './interfaces/interfaces';
 import About from './pages/About';
 import Main from './pages/Main';
 import PageNotFound from './pages/PageNotFound';

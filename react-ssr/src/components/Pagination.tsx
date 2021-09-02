@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
 import React from 'react';
-import { IPaginationProp } from '../intefaces/interfaces';
+import { IPaginationProp } from '../interfaces/interfaces';
 import './Pagination.css';
 
 function Pagination({

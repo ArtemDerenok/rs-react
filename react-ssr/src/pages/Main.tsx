@@ -1,19 +1,26 @@
 import { nanoid } from 'nanoid';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Pagination from '../components/Pagination';
 import Search from '../components/Search';
 import SelectSort from '../components/SelectSort';
 import Table from '../components/Table';
-import { IMainPageProp } from '../intefaces/interfaces';
+import { IMainPageProp } from '../interfaces/interfaces';
 import './Main.css';
 import { useTypeSelector } from '../hooks/useTypeSelector';
+import { handleMenuFlag } from '../store/action-creator/menu-flag';
 
 function Main({ addArticle }: IMainPageProp): JSX.Element {
   const [currentPage, setCurrentPage] = useState(1);
   const [articlesPerPage, setArticlesPerPage] = useState(10);
 
   const { articles } = useTypeSelector((state) => state.articles);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(handleMenuFlag(false));
+  }, [dispatch]);
 
   function handleArticlesPerPage(number: number) {
     if (number <= 0) {

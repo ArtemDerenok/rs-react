@@ -1,4 +1,4 @@
-import { ISearchAction, ISearchState, VALUE_SEARCH } from '../../intefaces/interfaces';
+import { ISearchAction, ISearchState, VALUE_SEARCH } from '../../interfaces/interfaces';
 
 const defaultValue: ISearchState = {
   searchValue: '',

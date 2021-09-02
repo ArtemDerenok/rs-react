@@ -1,5 +1,5 @@
 import { Dispatch } from 'react';
-import { ISortAction, VALUE_SORT } from '../../intefaces/interfaces';
+import { ISortAction, VALUE_SORT } from '../../interfaces/interfaces';
 
 export const choiseSortType = (value: string) => {
   return (dispatch: Dispatch<ISortAction>): void => {

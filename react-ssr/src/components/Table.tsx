@@ -1,5 +1,5 @@
 import React from 'react';
-import { ITableProp } from '../intefaces/interfaces';
+import { ITableProp } from '../interfaces/interfaces';
 import './Table.css';
 
 function Table({ arrArticles }: ITableProp): JSX.Element {

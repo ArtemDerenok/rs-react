@@ -9,7 +9,7 @@ import {
   FETCH_ARTICLES_SUCCESS,
   IArticle,
   IGetArticles,
-} from '../../intefaces/interfaces';
+} from '../../interfaces/interfaces';
 
 const API_KEY = '7b1fd1e758da411aad435c3ccd37acd5';
 

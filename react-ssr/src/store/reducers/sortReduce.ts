@@ -1,4 +1,4 @@
-import { ISortAction, ISortTypeState, VALUE_SORT } from '../../intefaces/interfaces';
+import { ISortAction, ISortTypeState, VALUE_SORT } from '../../interfaces/interfaces';
 
 const defaultValue: ISortTypeState = {
   sortType: 'publishedAt',

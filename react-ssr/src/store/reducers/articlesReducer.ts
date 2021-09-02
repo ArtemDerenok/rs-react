@@ -5,7 +5,7 @@ import {
   FETCH_ARTICLES_SUCCESS,
   IArticle,
   IArticleState,
-} from '../../intefaces/interfaces';
+} from '../../interfaces/interfaces';
 
 const result: IArticle[] = [];
 

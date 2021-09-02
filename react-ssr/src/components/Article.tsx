@@ -1,7 +1,14 @@
-import React from 'react';
-import { IArticleProp } from '../intefaces/interfaces';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { IArticleProp } from '../interfaces/interfaces';
+import { handleMenuFlag } from '../store/action-creator/menu-flag';
 
 function Article({ article }: IArticleProp): JSX.Element {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(handleMenuFlag(false));
+  }, [dispatch]);
+
   return (
     <div>
       <h3>{article?.title}</h3>

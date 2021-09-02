@@ -5,11 +5,13 @@ import thunk from 'redux-thunk';
 import { articlesReduce } from './reducers/articlesReducer';
 import { searchReduce } from './reducers/searchReducer';
 import { sortReduce } from './reducers/sortReduce';
+import { menuFlagReducer } from './reducers/menuFlagReducer';
 
 const rootReducer = combineReducers({
   articles: articlesReduce,
   searchValues: searchReduce,
   sortTypeValue: sortReduce,
+  menuFlag: menuFlagReducer,
 });
 
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
