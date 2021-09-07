@@ -1,0 +1,16 @@
+h4 {
+  margin-bottom: 5px;
+}
+
+.input-num {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.input-num__heading {
+  font-weight: bold;
+}
+
+.input-num__field {
+  width: 50px;
+}
