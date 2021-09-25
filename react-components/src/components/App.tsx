@@ -4,7 +4,7 @@ import './App.css';
 import Card from './Card';
 import SearchBar from './SearchBar';
 
-const cardsArr: Array<ICardProps> = [
+const cardsArr: ICardProps[] = [
   {
     heading: 'Heading1',
     text: 'Lorem ipsum dolor sit amet, Integer consectetur adipiscing elit.',

@@ -5,7 +5,7 @@
 }
 
 .card-heading {
-  text-transform:uppercase;
+  text-transform: uppercase;
 }
 
 .card-btn {
@@ -16,7 +16,6 @@
   background-color: blueviolet;
   border-radius: 5px;
   text-transform: uppercase;
- 
 }
 
 .card-closeBtn {

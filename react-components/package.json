@@ -6,11 +6,19 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack serve",
     "build": "npm run lint && cross-env NODE_ENV=production webpack",
-    "lint": "eslint --ext .ts,.tsx src --fix"
+    "styleFix": "prettier ./**/**.{scss,css} --write",
+    "lint": "npm run styleFix && eslint --ext .ts,.tsx src --fix"
+
   },
   "prettier": {
+    "printWidth": 100,
     "singleQuote": true,
-    "printWidth": 100
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "tabWidth": 2,
+    "semi": true,
+    "arrowParens": "avoid"
   },
   "author": "ArtemDerenok",
   "license": "ISC",
