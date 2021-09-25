@@ -1,6 +1,6 @@
 import React from 'react';
-import './Switch.css';
 import { ISwitchProp } from '../../interface/interfaces';
+import './Switch.css';
 
 function Switch({ value, handleChange }: ISwitchProp): JSX.Element {
   return (

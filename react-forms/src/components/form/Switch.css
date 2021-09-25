@@ -23,20 +23,20 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #6E6E6E;
-  transition: .4s;
+  background-color: #6e6e6e;
+  transition: 0.4s;
   margin-left: 5px;
 }
 
 .slider:before {
   position: absolute;
-  content: "";
+  content: '';
   height: 14px;
   width: 14px;
   left: 4px;
   bottom: 5px;
-  background-color: #FFFFFF;
-  transition: .4s;
+  background-color: #ffffff;
+  transition: 0.4s;
 }
 
 input:checked + .slider {

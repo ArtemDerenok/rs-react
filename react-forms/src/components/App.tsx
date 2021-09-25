@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import Form from './form/Forms';
 
-const arrCards: JSX.Element[] = [];
-
 function App(): JSX.Element {
-  const [cards, setCard] = useState(arrCards);
+  const [cards, setCard] = useState<JSX.Element[]>([]);
 
   function addCard(elem: JSX.Element) {
     setCard([...cards, elem]);

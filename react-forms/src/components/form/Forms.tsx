@@ -4,8 +4,8 @@ import Input from './Input';
 import Select from './Select';
 import RadioInput from './RadioInput';
 import Switch from './Switch';
-import './Form.css';
 import Card from '../cards/Card';
+import './Form.css';
 
 const initInput = [
   {
