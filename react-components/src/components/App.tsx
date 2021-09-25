@@ -1,8 +1,8 @@
 import React from 'react';
 import { ICardProps } from '../interface/interfaces';
-import './App.css';
 import Card from './Card';
 import SearchBar from './SearchBar';
+import './App.css';
 
 const cardsArr: ICardProps[] = [
   {

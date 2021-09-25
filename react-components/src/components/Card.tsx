@@ -1,6 +1,6 @@
 import React from 'react';
-import './Card.css';
 import { ICardProps } from '../interface/interfaces';
+import './Card.css';
 
 function Card({ heading, text, img }: ICardProps): JSX.Element {
   return (
